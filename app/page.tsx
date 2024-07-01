@@ -10,12 +10,12 @@ import Technologies from "./components/Technologies";
 import { EXPERIENCES } from "./constants";
 import ProjectCard from "./components/ProjectCard";
 import { motion } from "framer-motion";
-import Linkedin from "../public/assets/linkedin-icon.png";
-import Resume from "../public/assets/resume-icon.png";
-import GitHub from "../public/assets/github-icon.png";
-import taskManager from "../public/assets/task-manager.png";
-import dealOrNoDeal from "../public/assets/deal-or-no-deal.png";
-import dividendCalculator from "../public/assets/dividend-calculator.png";
+import Linkedin from "../public/assets/linkedin-logo.png";
+import Resume from "../public/assets/resume.png";
+import GitHub from "../public/assets/github.png";
+import taskManager from "../public/assets/task_manager.png";
+import dealOrNoDeal from "../public/assets/deal-or-no-deal.jpg";
+import dividendCalculator from "../public/assets/dividend-calculator.webp";
 import wolfScheduler from "../public/assets/wolf-scheduler.png";
 
 export default function Home() {
@@ -73,9 +73,9 @@ export default function Home() {
 								repeatType: "reverse",
 							},
 						}}
+						className="card-link"
 					>
 						<Link
-							className="card-link"
 							style={{ textDecoration: "none" }}
 							href="https://www.linkedin.com/in/rohan-patel49"
 							target="_blank"
@@ -99,6 +99,7 @@ export default function Home() {
 							},
 						}}
 						style={{ marginLeft: "2%", marginRight: "2%" }}
+						className="card-link"
 					>
 						<Link
 							className="card-link"
@@ -128,6 +129,7 @@ export default function Home() {
 								repeatType: "reverse",
 							},
 						}}
+						className="card-link"
 					>
 						<Link
 							className="card-link"

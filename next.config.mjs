@@ -1,14 +1,8 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
 
-module.exports = {
-	images: {
-		remotePatterns: [
-			{
-				protocol: "https",
-				hostname: "i.ibb.co",
-				port: "",
-				pathname: "/**/**",
-			},
-		],
-	},
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	/* config options here */
 };
+
+export default nextConfig;

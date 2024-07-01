@@ -32,7 +32,6 @@ const Card = ({ title, image, description }: CardsProps) => {
 				<p className="text-1xl">{description}</p>
 			</div>
 			<Image
-				fill={true}
 				className="w-26 h-30 object-cover object-center"
 				src={image}
 				alt="avatar"
