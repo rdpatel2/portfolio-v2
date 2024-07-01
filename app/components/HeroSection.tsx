@@ -7,6 +7,7 @@ const HeroSection = () => {
 	return (
 		<div className="intro" style={{ textAlign: "center" }}>
 			<motion.h1
+				viewport={{ once: true }}
 				initial={{ opacity: 0, y: -100 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5, delay: 0.5 }}
@@ -15,6 +16,7 @@ const HeroSection = () => {
 				Hi, <br /> I'm Rohan Patel
 			</motion.h1>
 			<motion.div
+				viewport={{ once: true }}
 				initial={{ opacity: 0, x: 100 }}
 				whileInView={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.5, delay: 1 }}
@@ -25,6 +27,7 @@ const HeroSection = () => {
 			</motion.div>
 
 			<motion.p
+				viewport={{ once: true }}
 				initial={{ opacity: 0, x: -100 }}
 				whileInView={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.5, delay: 1.5 }}

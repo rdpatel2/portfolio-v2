@@ -60,6 +60,7 @@ export default function Home() {
 					style={{ paddingTop: "3.5%" }}
 					initial={{ opacity: 0, x: 100 }}
 					whileInView={{ opacity: 1, x: 0 }}
+					viewport={{ once: true }}
 					transition={{ duration: 0.5, delay: 1.7 }}
 				>
 					<motion.div
@@ -73,6 +74,7 @@ export default function Home() {
 								repeatType: "reverse",
 							},
 						}}
+						viewport={{ once: true }}
 						className="card-link"
 					>
 						<Link
@@ -98,6 +100,7 @@ export default function Home() {
 								repeatType: "reverse",
 							},
 						}}
+						viewport={{ once: true }}
 						style={{ marginLeft: "2%", marginRight: "2%" }}
 						className="card-link"
 					>
@@ -129,6 +132,7 @@ export default function Home() {
 								repeatType: "reverse",
 							},
 						}}
+						viewport={{ once: true }}
 						className="card-link"
 					>
 						<Link
@@ -157,6 +161,7 @@ export default function Home() {
 					}}
 				></div>
 				<motion.div
+					viewport={{ once: true }}
 					whileInView={{ opacity: 1 }}
 					initial={{ opacity: 0 }}
 					transition={{ duration: 0.5, delay: 0.3 }}
@@ -184,8 +189,9 @@ export default function Home() {
 				</motion.div>
 				<motion.div
 					whileInView={{ opacity: 1 }}
+					viewport={{ once: true }}
 					initial={{ opacity: 0 }}
-					transition={{ duration: 1, delay: 1.2 }}
+					transition={{ duration: 1, delay: 0.3 }}
 					className=" flex flex-row justify-center items-center"
 					style={{
 						height: "40%",
@@ -197,9 +203,10 @@ export default function Home() {
 					<HorizontalBarChart />
 				</motion.div>
 				<motion.div
+					viewport={{ once: true }}
 					whileInView={{ opacity: 1 }}
 					initial={{ opacity: 0 }}
-					transition={{ duration: 1, delay: 0.7 }}
+					transition={{ duration: 1, delay: 0.5 }}
 					style={{ marginLeft: "3%", marginRight: "3%" }}
 				>
 					<p
@@ -218,16 +225,20 @@ export default function Home() {
 					</p>
 				</motion.div>
 				<motion.div
+					viewport={{ once: true }}
 					initial={{ opacity: 0, x: -100 }}
 					whileInView={{ opacity: 1, x: 0 }}
-					transition={{ duration: 0.5, delay: 1.5 }}
+					transition={{ duration: 0.5, delay: 0.5 }}
 				>
 					<Technologies />
 				</motion.div>
+				<div id="experience" />
+				<br />
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
-					transition={{ duration: 0.7, delay: 1.5 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.7, delay: 0.7 }}
 					className="intro"
 					style={{
 						textAlign: "center",
@@ -237,7 +248,6 @@ export default function Home() {
 						margin: "auto",
 						marginBottom: "1%",
 					}}
-					id="experience"
 				>
 					<span className="bg-gradient-to-r from-green-500 via-greenyellow-400 to-yellow-500 bg-clip-text text-transparent text-5xl">
 						Experience
@@ -247,9 +257,10 @@ export default function Home() {
 					{EXPERIENCES.map((experience, index) => (
 						<div key={index} className="mb-8 flex flex-wrap lg:justify-center">
 							<motion.div
+								viewport={{ once: true }}
 								initial={{ opacity: 0, x: -200 }}
 								whileInView={{ opacity: 1, x: 0 }}
-								transition={{ duration: 0.5, delay: 1.5 }}
+								transition={{ duration: 0.5, delay: 0.5 }}
 								className="w-full lg:w-1/4"
 							>
 								<p className="mb-2 mt-2 text-sm text-neutral-400">
@@ -257,6 +268,7 @@ export default function Home() {
 								</p>
 							</motion.div>
 							<motion.div
+								viewport={{ once: true }}
 								initial={{ opacity: 0, x: 200 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 1 }}
@@ -281,6 +293,8 @@ export default function Home() {
 						</div>
 					))}
 				</div>
+				<div id="projects"></div>
+				<br />
 				<div
 					style={{
 						textAlign: "center",
@@ -291,9 +305,9 @@ export default function Home() {
 						marginBottom: "1%",
 						borderTop: "1px solid rgba(255, 255, 255, 0.25)",
 					}}
-					id="projects"
 				>
 					<motion.div
+						viewport={{ once: true }}
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						transition={{ duration: 0.5, delay: 1 }}
@@ -303,6 +317,7 @@ export default function Home() {
 						</span>
 					</motion.div>
 					<motion.div
+						viewport={{ once: true }}
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5, delay: 1 }}
@@ -328,6 +343,7 @@ export default function Home() {
 						</Link>
 					</motion.div>
 					<motion.div
+						viewport={{ once: true }}
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5, delay: 1 }}
@@ -346,11 +362,12 @@ export default function Home() {
 							<ProjectCard
 								title="Task Manager"
 								image={taskManager}
-								description="Created a task manager in a java IDE with IO capability, along with sorting and organziational features with a fully functioning java GUI"
+								description="Created a task manager in a java IDE with IO capability, along with sorting and organizational features with a fully functioning java GUI"
 							/>
 						</Link>
 					</motion.div>
 					<motion.div
+						viewport={{ once: true }}
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5, delay: 1 }}
@@ -378,6 +395,7 @@ user-friendly interface for financial analysis.
 						</Link>
 					</motion.div>
 					<motion.div
+						viewport={{ once: true }}
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5, delay: 1 }}
