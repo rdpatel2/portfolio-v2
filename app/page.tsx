@@ -52,12 +52,12 @@ export default function Home() {
 			>
 				<div id="top"></div>
 				<Navbar />
-				<div>
+				<div style={{ color: "white" }}>
 					<HeroSection />
 				</div>
 				<motion.div
 					className="flex flex-row items-center justify-center"
-					style={{ paddingTop: "3.5%" }}
+					style={{ paddingTop: "3.5%", color: "white" }}
 					initial={{ opacity: 0, x: 100 }}
 					whileInView={{ opacity: 1, x: 0 }}
 					viewport={{ once: true }}
@@ -172,6 +172,7 @@ export default function Home() {
 						textAlign: "center",
 						margin: "auto",
 						borderTop: "1px solid rgba(255, 255, 255, 0.25)",
+						color: "white",
 					}}
 				>
 					<span
@@ -207,7 +208,7 @@ export default function Home() {
 					whileInView={{ opacity: 1 }}
 					initial={{ opacity: 0 }}
 					transition={{ duration: 1, delay: 0.5 }}
-					style={{ marginLeft: "3%", marginRight: "3%" }}
+					style={{ marginLeft: "3%", marginRight: "3%", color: "white" }}
 				>
 					<p
 						className="text-2xl font-light tracking-tight lg:mt-14 lg:text-3xl"
@@ -247,6 +248,7 @@ export default function Home() {
 						width: "90%",
 						margin: "auto",
 						marginBottom: "1%",
+						color: "white",
 					}}
 				>
 					<span className="bg-gradient-to-r from-green-500 via-greenyellow-400 to-yellow-500 bg-clip-text text-transparent text-5xl">
@@ -262,6 +264,7 @@ export default function Home() {
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 0.5 }}
 								className="w-full lg:w-1/4"
+								style={{ color: "white" }}
 							>
 								<p className="mb-2 mt-2 text-sm text-neutral-400">
 									{experience.year}
@@ -273,6 +276,7 @@ export default function Home() {
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5, delay: 1 }}
 								className="w-full max-w-xl lg:w-3/4"
+								style={{ color: "white" }}
 							>
 								<h6 className="mb-2 font-normal">
 									{experience.role} -{" "}
@@ -304,6 +308,7 @@ export default function Home() {
 						margin: "auto",
 						marginBottom: "1%",
 						borderTop: "1px solid rgba(255, 255, 255, 0.25)",
+						color: "white",
 					}}
 				>
 					<motion.div
@@ -311,6 +316,7 @@ export default function Home() {
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
 						transition={{ duration: 0.5, delay: 1 }}
+						style={{ color: "white" }}
 					>
 						<span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 bg-clip-text text-transparent text-5xl">
 							Projects
@@ -322,7 +328,11 @@ export default function Home() {
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5, delay: 1 }}
 						className="card-link"
-						style={{ width: "60%", margin: "auto", height: "fit-content" }}
+						style={{
+							width: "60%",
+							margin: "auto",
+							height: "fit-content",
+						}}
 					>
 						<Link
 							className="card-link"

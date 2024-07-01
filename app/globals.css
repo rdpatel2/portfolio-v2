@@ -35,9 +35,5 @@ body {
 .card-link:hover {
 	transition: all ease-in-out 0.3s;
 	scale: 1.07;
-}
-
-* {
-	scroll-behavior: smooth;
-	transition: ease-in-out 0.3s;
+	color: white;
 }
