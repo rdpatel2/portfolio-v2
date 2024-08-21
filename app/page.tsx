@@ -39,6 +39,8 @@ export default function Home() {
 	var java = (now.diff(javaStart, "days") / 365.0).toFixed(2);
 	var pythonStart = moment([2023, 11, 18]);
 	var python = (now.diff(pythonStart, "days") / 365.0).toFixed(2);
+	var cStart = moment([2024, 8, 19]);
+	var c = (now.diff(cStart, "days") / 365.0).toFixed(2);
 
 	return (
 		<>
@@ -220,9 +222,10 @@ export default function Home() {
 						}}
 					>
 						I've been using JS for {javaScript} years, Java for {java} years,
-						and Python for {python} years. I've spent most of my time working
-						with object oriented programming in python and java. Along with web
-						development using javascript, typescript, html, and css.
+						Python for {python} years, and C for {c} years. I've spent most of
+						my time working with object oriented programming in python and java.
+						Along with web development using javascript, typescript, html, and
+						css.
 					</p>
 				</motion.div>
 				<motion.div

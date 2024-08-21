@@ -16,7 +16,7 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Title);
 const HorizontalBarChart = () => {
 	var a = moment(moment().local());
 	const data = {
-		labels: ["JavaScript", "Java", "Python"],
+		labels: ["JavaScript", "Java", "Python", "C"],
 		datasets: [
 			{
 				label: "Years",
@@ -24,6 +24,7 @@ const HorizontalBarChart = () => {
 					a.diff(moment([2023, 2, 20]), "years", true),
 					a.diff(moment([2023, 7, 13]), "years", true),
 					a.diff(moment([2023, 11, 18]), "years", true),
+					a.diff(moment([2024, 8, 19]), "years", true),
 				],
 				backgroundColor: ["#F0DB4F", "#5382a1", "#646464"],
 				barPercentage: 0.5,
