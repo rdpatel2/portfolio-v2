@@ -39,8 +39,53 @@ export default function Home() {
 	var java = (now.diff(javaStart, "days") / 365.0).toFixed(2);
 	var pythonStart = moment([2023, 11, 18]);
 	var python = (now.diff(pythonStart, "days") / 365.0).toFixed(2);
-	var cStart = moment([2024, 8, 19]);
+	var cStart = moment([2024, 6, 1]);
 	var c = (now.diff(cStart, "days") / 365.0).toFixed(2);
+	var JavaScriptStr = "";
+
+	if (parseFloat(javaScript) >= 1.0) {
+		javaScript = "over 1 year";
+	} else if (parseFloat(javaScript) >= 3.0) {
+		javaScript = "over 3 years";
+	} else if (parseFloat(javaScript) >= 5.0) {
+		javaScript = "over 5 years";
+	} else if (parseFloat(javaScript) >= 10.0) {
+		javaScript = "over 10 years";
+	}
+
+	if (parseFloat(java) >= 1.0) {
+		java = "over 1 year";
+	} else if (parseFloat(java) >= 3.0) {
+		java = "over 3 years";
+	} else if (parseFloat(java) >= 5.0) {
+		java = "over 5 years";
+	} else if (parseFloat(java) >= 10.0) {
+		java = "over 10 years";
+	}
+
+	if (parseFloat(python) < 1.0) {
+		python = "less than a year";
+	} else if (parseFloat(python) >= 1.0) {
+		python = "over 1 year";
+	} else if (parseFloat(python) >= 3.0) {
+		python = "over 3 years";
+	} else if (parseFloat(python) >= 5.0) {
+		python = "over 5 years";
+	} else if (parseFloat(python) >= 10.0) {
+		python = "over 10 years";
+	}
+
+	if (parseFloat(c) < 1.0) {
+		c = "less than a year";
+	} else if (parseFloat(c) >= 1.0) {
+		c = "over 1 year";
+	} else if (parseFloat(c) >= 3.0) {
+		c = "over 3 years";
+	} else if (parseFloat(c) >= 5.0) {
+		c = "over 5 years";
+	} else if (parseFloat(c) >= 10.0) {
+		c = "over 10 years";
+	}
 
 	return (
 		<>
@@ -221,11 +266,10 @@ export default function Home() {
 							margin: "auto",
 						}}
 					>
-						I've been using JS for {javaScript} years, Java for {java} years,
-						Python for {python} years, and C for {c} years. I've spent most of
-						my time working with object oriented programming in python and java.
-						Along with web development using javascript, typescript, html, and
-						css.
+						I've been using JS for {javaScript}, Java for {java}, Python for{" "}
+						{python}, and C for {c}. I've spent most of my time working with
+						object oriented programming in python and java. Along with web
+						development using javascript, typescript, html, and css.
 					</p>
 				</motion.div>
 				<motion.div
