@@ -42,6 +42,8 @@ export default function Home() {
   var cStart = moment([2024, 6, 1]);
   var c = (now.diff(cStart, "days") / 365.0).toFixed(2);
   var JavaScriptStr = "";
+  var sqlStart = moment([2024, 12, 12]);
+  var sql = (now.diff(sqlStart, "days") / 365.0).toFixed(2);
 
   if (parseFloat(javaScript) >= 1.0) {
     javaScript = "over 1 year";
@@ -85,6 +87,18 @@ export default function Home() {
     c = "over 5 years";
   } else if (parseFloat(c) >= 10.0) {
     c = "over 10 years";
+  }
+
+  if (parseFloat(sql) < 1.0) {
+    sql = "less than a year";
+  } else if (parseFloat(sql) >= 1.0) {
+    sql = "over 1 year";
+  } else if (parseFloat(sql) >= 3.0) {
+    sql = "over 3 years";
+  } else if (parseFloat(sql) >= 5.0) {
+    sql = "over 5 years";
+  } else if (parseFloat(sql) >= 10.0) {
+    sql = "over 10 years";
   }
 
   return (
@@ -268,9 +282,9 @@ export default function Home() {
             }}
           >
             I've been using JS for {javaScript}, Java for {java}, Python for{" "}
-            {python}, and C for {c}. I've spent most of my time working with
-            object oriented programming in python and java. Along with web
-            development using javascript, typescript, html, and css.
+            {python}, C for {c}. I've spent most of my time working with object
+            oriented programming in python and java. Along with web development
+            using javascript, typescript, html, and css.
           </p>
         </motion.div>
         <motion.div
@@ -441,7 +455,7 @@ export default function Home() {
                 width: "fit-content",
               }}
               target="_blank"
-              href="https://github.com/rdpatel2/WolfScheduler"
+              href="https://github.com/rdpatel2/Dividend-Calculator"
             >
               <ProjectCard
                 title="Dividend Calculator"

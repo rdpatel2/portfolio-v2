@@ -4,14 +4,24 @@ export const EXPERIENCES = [
     role: "Software Manager",
     company: "R1649 Private Equity Partners",
     description:
-      "Led AI initiatives to train models that parsed over 1000 data points for industry-specific insights, improving the company’s decision-making process. Managed the integration of AI- driven data extraction systems into the company’s website, providing realtime, relevant content for users. Spearheaded the development of machine learning workflows to customize data output optimizing business operations by finding over 250 potential investors.",
-    technologies: ["Python", "SuperAGI", "Scrapy", "Management", "Leadership"],
+      "Spearheaded AI initiatives to develop models analyzing 1000+ data points, driving data-informed strategic decisions. Deployed the company website using AWS Amplify for scalable infrastructure and performance, while configuring backend database functions with AWS EC2 to support efficient data handling and storage for seamless web functionalities. Executed secure, scalable authentication protocols using AWS Cognito and NextAuth, streamlining user login workflows.",
+    technologies: [
+      "Python",
+      "AWS EC2",
+      "AWS Amplify",
+      "Management",
+      "NextAuth",
+      "AWS Cognito",
+    ],
   },
   {
     year: "Jun 2024 - Aug 2024",
     role: "Lead Software Engineer",
     company: "R1649 Private Equity Partners",
-    description: `Led a team migrating front-end codebase from React to Next.js, cleaning up the user interface, resulted in 16% increase in runtime efficiency. Assisted in full stack integration, integrating a python database into the front-end.`,
+    description: `Directed front-end development to better the UI/UX experience on the official R1649 website.
+                  Organized and assisted a team in integrating the NextJS front end to a Flask backend.
+                  Designed and launched a client-side dashboard for real-time equity tracking, improving
+                  transparency and reducing manual reporting time by 50%.`,
     technologies: ["Next.js", "TailwindCSS", "React", "Python"],
   },
   {
