@@ -4,8 +4,8 @@ import useMeasure from "react-use-measure";
 
 export default function Home() {
   // Speed settings
-  const FAST_SPEED = 1;
-  const SLOW_SPEED = 0.3;
+  const FAST_SPEED = 0.7;
+  const SLOW_SPEED = 0.25;
   const [speed, setSpeed] = useState(FAST_SPEED);
 
   // DOM measurements
@@ -18,9 +18,12 @@ export default function Home() {
   // Track distance traveled based on elapsed time and speed
   const distanceTraveledRef = useRef(0);
 
+  // Track whether the carousel is in the viewport
+  const [isInView, setIsInView] = useState(false);
+
   // Create a self-contained animation loop with requestAnimationFrame
   useEffect(() => {
-    if (!width || width === 0) return;
+    if (!width || width === 0 || !isInView) return; // Only start animation if in view
 
     // Measure the total length of the grid (combining the widths of all items)
     const measureGridLength = () => {
@@ -71,32 +74,50 @@ export default function Home() {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
-  }, [width, speed]);
+  }, [width, speed, isInView]); // Add `isInView` to dependency array
+
+  // IntersectionObserver to detect when the carousel is in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting); // Set state based on visibility
+      },
+      { threshold: 0.5 } // Trigger when 50% of the element is visible
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    // Clean up observer
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <main className="py-8">
-      <div className="relative">
+      <div className="overflow-hidden">
         <div
-          className="overflow-visible"
+          className="overflow-hidden"
+          style={{
+            height: "23vh",
+            paddingTop: "1.3rem",
+          }}
           onMouseEnter={() => setSpeed(SLOW_SPEED)}
           onMouseLeave={() => setSpeed(FAST_SPEED)}
         >
-          <div ref={containerRef} className="flex gap-8">
+          <div ref={containerRef} className="flex gap-8 ">
             {/* First set of items */}
-            {[...Array(4)].map((_, idx) => (
+            {[...Array(9)].map((_, idx) => (
               <div
                 key={`first-${idx}`}
                 className="flex-shrink-0"
                 ref={idx === 0 ? ref : null}
                 style={{ height: "fit-content" }}
               >
-                <SkillsGrid />
-              </div>
-            ))}
-
-            {/* Second set of identical items for looping */}
-            {[...Array(4)].map((_, idx) => (
-              <div key={`second-${idx}`} className="flex-shrink-0">
                 <SkillsGrid />
               </div>
             ))}

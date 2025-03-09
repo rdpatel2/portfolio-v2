@@ -187,12 +187,11 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className=" flex flex-row justify-center items-center"
           style={{
-            height: "40%",
+            height: "30%",
             paddingLeft: "3%",
             paddingRight: "3%",
-            width: "100%",
+            width: "30%",
             margin: "auto",
-            paddingBottom: "5%",
           }}
         >
           <SkillsCarousel />

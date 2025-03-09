@@ -1,6 +1,14 @@
 export const EXPERIENCES = [
   {
-    year: "Aug 2024 - Present",
+    year: "Jan 2025 - Present",
+    role: "Undergraduate Teaching Assistant",
+    company: "North Carolina State University",
+    description:
+      "Provided direct academic support to 27 students weekly while assisting 120+ students across 6 sections of the course. Held weekly office hours to clarify course concepts, troubleshoot assignments, and improve student understanding. Developed a grading automation script, increasing grading efficiency by 47%, streamlining assessments for TAs and reducing turnaround time.",
+    technologies: ["Java", "Git", "JUnit", "GitBash"],
+  },
+  {
+    year: "Aug 2024 - Jan 2025",
     role: "Software Manager",
     company: "R1649 Private Equity Partners",
     description:
@@ -9,7 +17,6 @@ export const EXPERIENCES = [
       "Python",
       "AWS EC2",
       "AWS Amplify",
-      "Management",
       "NextAuth",
       "AWS Cognito",
     ],
@@ -23,24 +30,5 @@ export const EXPERIENCES = [
                   Designed and launched a client-side dashboard for real-time equity tracking, improving
                   transparency and reducing manual reporting time by 50%.`,
     technologies: ["Next.js", "TailwindCSS", "React", "Python"],
-  },
-  {
-    year: "Jun 2023 - Aug 2024",
-    role: "Facility Management",
-    company: "YMCA",
-    description: `Worked in a 5-member team overseeing maintenance in 5+ facilities across Charlotte. Decreased the frequency of maintenance requests by 26%.`,
-    technologies: [
-      "Problem Solving",
-      "Decision Making",
-      "Teamwork",
-      "Communication",
-    ],
-  },
-  {
-    year: "Jun 2022 - Jul 2022",
-    role: "Intern",
-    company: "Bosch Rexroth",
-    description: `Streamlined logistics within the warehouse by utilizing 5S to create a new flow model resulting in a 13% increase in efficiency. Modeled and constructed a new storage system providing ease of access between two industrial laser engravers.`,
-    technologies: ["SolidWorks", "AutoCAD"],
   },
 ];
