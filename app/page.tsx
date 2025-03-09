@@ -3,7 +3,7 @@
 import HeroSection from "./components/HeroSection";
 import Card from "./components/Cards";
 import Link from "next/link";
-import HorizontalBarChart from "./components/HorizontalBarChart";
+import SkillsCarousel from "./components/SkillsCarousel";
 import moment from "moment";
 import Navbar from "./components/Navbar";
 import Technologies from "./components/Technologies";
@@ -31,75 +31,6 @@ export default function Home() {
       },
     },
   });
-
-  var now = moment();
-  var javaScriptStart = moment([2023, 2, 20]);
-  var javaScript = (now.diff(javaScriptStart, "days") / 365.0).toFixed(2);
-  var javaStart = moment([2023, 7, 13]);
-  var java = (now.diff(javaStart, "days") / 365.0).toFixed(2);
-  var pythonStart = moment([2023, 11, 18]);
-  var python = (now.diff(pythonStart, "days") / 365.0).toFixed(2);
-  var cStart = moment([2024, 6, 1]);
-  var c = (now.diff(cStart, "days") / 365.0).toFixed(2);
-  var JavaScriptStr = "";
-  var sqlStart = moment([2024, 12, 12]);
-  var sql = (now.diff(sqlStart, "days") / 365.0).toFixed(2);
-
-  if (parseFloat(javaScript) >= 1.0) {
-    javaScript = "over 1 year";
-  } else if (parseFloat(javaScript) >= 3.0) {
-    javaScript = "over 3 years";
-  } else if (parseFloat(javaScript) >= 5.0) {
-    javaScript = "over 5 years";
-  } else if (parseFloat(javaScript) >= 10.0) {
-    javaScript = "over 10 years";
-  }
-
-  if (parseFloat(java) >= 1.0) {
-    java = "over 1 year";
-  } else if (parseFloat(java) >= 3.0) {
-    java = "over 3 years";
-  } else if (parseFloat(java) >= 5.0) {
-    java = "over 5 years";
-  } else if (parseFloat(java) >= 10.0) {
-    java = "over 10 years";
-  }
-
-  if (parseFloat(python) < 1.0) {
-    python = "less than a year";
-  } else if (parseFloat(python) >= 1.0) {
-    python = "over 1 year";
-  } else if (parseFloat(python) >= 3.0) {
-    python = "over 3 years";
-  } else if (parseFloat(python) >= 5.0) {
-    python = "over 5 years";
-  } else if (parseFloat(python) >= 10.0) {
-    python = "over 10 years";
-  }
-
-  if (parseFloat(c) < 1.0) {
-    c = "less than a year";
-  } else if (parseFloat(c) >= 1.0) {
-    c = "over 1 year";
-  } else if (parseFloat(c) >= 3.0) {
-    c = "over 3 years";
-  } else if (parseFloat(c) >= 5.0) {
-    c = "over 5 years";
-  } else if (parseFloat(c) >= 10.0) {
-    c = "over 10 years";
-  }
-
-  if (parseFloat(sql) < 1.0) {
-    sql = "less than a year";
-  } else if (parseFloat(sql) >= 1.0) {
-    sql = "over 1 year";
-  } else if (parseFloat(sql) >= 3.0) {
-    sql = "over 3 years";
-  } else if (parseFloat(sql) >= 5.0) {
-    sql = "over 5 years";
-  } else if (parseFloat(sql) >= 10.0) {
-    sql = "over 10 years";
-  }
 
   return (
     <>
@@ -242,7 +173,6 @@ export default function Home() {
             style={{
               paddingTop: "3%",
               height: "40%",
-              margin: "auto",
               textAlign: "center",
               alignSelf: "center",
             }}
@@ -254,39 +184,26 @@ export default function Home() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           initial={{ opacity: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className=" flex flex-row justify-center items-center"
           style={{
             height: "40%",
             paddingLeft: "3%",
             paddingRight: "3%",
-            width: "60%",
+            width: "100%",
+            margin: "auto",
+            paddingBottom: "5%",
           }}
         >
-          <HorizontalBarChart />
+          <SkillsCarousel />
         </motion.div>
         <motion.div
           viewport={{ once: true }}
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
           style={{ marginLeft: "3%", marginRight: "3%", color: "white" }}
-        >
-          <p
-            className="text-2xl font-light tracking-tight lg:mt-14 lg:text-3xl"
-            style={{
-              textAlign: "center",
-              paddingBottom: "6%",
-              width: "90%",
-              margin: "auto",
-            }}
-          >
-            I've been using JS for {javaScript}, Java for {java}, Python for{" "}
-            {python}, C for {c}. I've spent most of my time working with object
-            oriented programming in python and java. Along with web development
-            using javascript, typescript, html, and css.
-          </p>
-        </motion.div>
+        ></motion.div>
         <motion.div
           viewport={{ once: true }}
           initial={{ opacity: 0, x: -100 }}
