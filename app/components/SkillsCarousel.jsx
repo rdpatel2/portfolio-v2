@@ -18,12 +18,9 @@ export default function Home() {
   // Track distance traveled based on elapsed time and speed
   const distanceTraveledRef = useRef(0);
 
-  // Track whether the carousel is in the viewport
-  const [isInView, setIsInView] = useState(false);
-
   // Create a self-contained animation loop with requestAnimationFrame
   useEffect(() => {
-    if (!width || width === 0 || !isInView) return; // Only start animation if in view
+    if (!width || width === 0) return; // Only start animation if width is valid
 
     // Measure the total length of the grid (combining the widths of all items)
     const measureGridLength = () => {
@@ -50,7 +47,7 @@ export default function Home() {
       positionRef.current -= moveAmount;
       distanceTraveledRef.current += moveAmount;
 
-      // Reset position and distance when the total distance traveled equals or exceeds the grid length
+      // Only reset the position if it's been a full cycle
       if (distanceTraveledRef.current >= gridLengthRef.current) {
         positionRef.current = 0;
         distanceTraveledRef.current = 0; // Reset distance
@@ -74,49 +71,32 @@ export default function Home() {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
-  }, [width, speed, isInView]); // Add `isInView` to dependency array
-
-  // IntersectionObserver to detect when the carousel is in view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting); // Set state based on visibility
-      },
-      { threshold: 0.5 } // Trigger when 50% of the element is visible
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    // Clean up observer
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
+  }, [width, speed]);
 
   return (
     <main className="py-8">
-      <div className="overflow-hidden">
+      <div
+        className="overflow-hidden"
+        style={{
+          height: "200px",
+          paddingTop: "40px",
+          width: "30%",
+          margin: "auto",
+          overflowX: "hidden",
+        }}
+      >
         <div
-          className="overflow-hidden"
-          style={{
-            height: "23vh",
-            paddingTop: "1.3rem",
-          }}
+          className="overflow-visible"
           onMouseEnter={() => setSpeed(SLOW_SPEED)}
           onMouseLeave={() => setSpeed(FAST_SPEED)}
         >
-          <div ref={containerRef} className="flex gap-8 ">
+          <div ref={containerRef} className="flex gap-8">
             {/* First set of items */}
-            {[...Array(9)].map((_, idx) => (
+            {[...Array(30)].map((_, idx) => (
               <div
                 key={`first-${idx}`}
                 className="flex-shrink-0"
                 ref={idx === 0 ? ref : null}
-                style={{ height: "fit-content" }}
               >
                 <SkillsGrid />
               </div>
