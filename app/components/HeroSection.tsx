@@ -34,10 +34,9 @@ const HeroSection = () => {
         className="text-1xl font-thin tracking-tight lg:mt-14 lg:text-3xl"
         style={{ marginRight: "20%", marginLeft: "20%" }}
       >
-        I am currently a second-year student at North Carolina State University
-        in Raleigh, pursuing a Bachelor of Science in Computer Science. I am on
-        track to graduate in May 2026 and plan to further my education through
-        NC State’s accelerated master’s program in Computer Science.
+        I'm a second-year student at North Carolina State University in Raleigh,
+        pursuing a B.S. in Computer Science. I am on track to graduate in May
+        2026 and plan to pursue a MCS degree.
       </motion.p>
     </div>
   );

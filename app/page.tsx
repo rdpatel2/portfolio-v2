@@ -1,22 +1,13 @@
 "use client";
 
 import HeroSection from "./components/HeroSection";
-import Card from "./components/Cards";
-import Link from "next/link";
 import SkillsCarousel from "./components/SkillsCarousel";
-import moment from "moment";
 import Navbar from "./components/Navbar";
 import Technologies from "./components/Technologies";
 import { EXPERIENCES } from "./constants";
-import ProjectCard from "./components/ProjectCard";
 import { motion } from "framer-motion";
-import Linkedin from "../public/assets/linkedin-logo.png";
-import Resume from "../public/assets/resume.png";
-import GitHub from "../public/assets/github.png";
-import taskManager from "../public/assets/task_manager.png";
-import dealOrNoDeal from "../public/assets/deal-or-no-deal.jpg";
-import dividendCalculator from "../public/assets/dividend-calculator.webp";
-import wolfScheduler from "../public/assets/wolf-scheduler.png";
+import Socials from "./components/Socials";
+import Example from "./components/HorizontalScrollCarousel";
 
 export default function Home() {
   const iconVariants = (duration: number) => ({
@@ -34,115 +25,13 @@ export default function Home() {
 
   return (
     <>
-      <div
-        className="page-container absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-        style={{
-          width: "100%",
-          height: "100%",
-          overflowX: "hidden",
-        }}
-      >
-        <div id="top"></div>
+      <div className="page-container absolute top-0 z-[-2] w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+        <div id="top" style={{ overflowX: "hidden" }}></div>
         <Navbar />
-        <div style={{ color: "white" }}>
+        <div style={{ color: "white", overflowX: "hidden" }}>
           <HeroSection />
         </div>
-        <motion.div
-          className="flex flex-row items-center justify-center"
-          style={{ paddingTop: "3.5%", color: "white" }}
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1.7 }}
-        >
-          <motion.div
-            initial={{ y: -20 }}
-            whileInView={{
-              y: [20, -20],
-              transition: {
-                duration: 2,
-                ease: "linear",
-                repeat: Infinity,
-                repeatType: "reverse",
-              },
-            }}
-            viewport={{ once: true }}
-            className="card-link"
-          >
-            <Link
-              style={{ textDecoration: "none" }}
-              href="https://www.linkedin.com/in/rohan-patel49"
-              target="_blank"
-            >
-              <Card
-                title="LinkedIn"
-                image={Linkedin}
-                description="Connect wtih me on LinkedIn"
-              />
-            </Link>
-          </motion.div>
-          <motion.div
-            initial={{ y: -20 }}
-            whileInView={{
-              y: [20, -20],
-              transition: {
-                duration: 3,
-                ease: "linear",
-                repeat: Infinity,
-                repeatType: "reverse",
-              },
-            }}
-            viewport={{ once: true }}
-            style={{ marginLeft: "2%", marginRight: "2%" }}
-            className="card-link"
-          >
-            <Link
-              className="card-link"
-              style={{
-                textDecoration: "none",
-                marginLeft: "2%",
-                marginRight: "2%",
-              }}
-              href="/pdfs/resume.pdf"
-              target="_blank"
-            >
-              <Card
-                title="Resume"
-                image={Resume}
-                description="Take a look at my resume"
-              />
-            </Link>
-          </motion.div>
-          <motion.div
-            initial={{ y: -20 }}
-            whileInView={{
-              y: [20, -20],
-              transition: {
-                duration: 2.5,
-                ease: "linear",
-                repeat: Infinity,
-                repeatType: "reverse",
-              },
-            }}
-            viewport={{ once: true }}
-            className="card-link"
-          >
-            <Link
-              className="card-link"
-              style={{
-                textDecoration: "none",
-              }}
-              href="https://github.com/rdpatel2"
-              target="_blank"
-            >
-              <Card
-                title="GitHub"
-                image={GitHub}
-                description="Check out my github repos"
-              />
-            </Link>
-          </motion.div>
-        </motion.div>
+        <Socials />
         <div
           style={{
             marginTop: "%",
@@ -163,22 +52,23 @@ export default function Home() {
             height: "15%",
             alignContent: "center",
             textAlign: "center",
-            margin: "auto",
             borderTop: "1px solid rgba(255, 255, 255, 0.25)",
             color: "white",
+            margin: "auto",
+            paddingTop: "2%",
           }}
         >
-          <span
+          <div
             className="bg-gradient-to-r from-pink-500 via-purple-400 to-blue-500 bg-clip-text text-transparent text-5xl"
             style={{
-              paddingTop: "3%",
               height: "40%",
               textAlign: "center",
               alignSelf: "center",
+              paddingBottom: "2%",
             }}
           >
             Languages
-          </span>
+          </div>
         </motion.div>
         <motion.div
           whileInView={{ opacity: 1 }}
@@ -190,8 +80,9 @@ export default function Home() {
             height: "30%",
             paddingLeft: "3%",
             paddingRight: "3%",
-            width: "30%",
+            width: "70%",
             margin: "auto",
+            overflowX: "hidden",
           }}
         >
           <SkillsCarousel />
@@ -229,9 +120,9 @@ export default function Home() {
             color: "white",
           }}
         >
-          <span className="bg-gradient-to-r from-green-500 via-greenyellow-400 to-yellow-500 bg-clip-text text-transparent text-5xl">
+          <div className="bg-gradient-to-r from-green-500 via-greenyellow-400 to-yellow-500 bg-clip-text text-transparent text-5xl">
             Experience
-          </span>
+          </div>
         </motion.div>
         <div style={{ marginLeft: "3%" }}>
           {EXPERIENCES.map((experience, index) => (
@@ -284,7 +175,7 @@ export default function Home() {
             paddingBottom: "3%",
             width: "90%",
             margin: "auto",
-            marginBottom: "1%",
+            marginBottom: "10%",
             borderTop: "1px solid rgba(255, 255, 255, 0.25)",
             color: "white",
           }}
@@ -296,122 +187,26 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 1 }}
             style={{ color: "white" }}
           >
-            <span className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 bg-clip-text text-transparent text-5xl">
+            <div
+              className="bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500 bg-clip-text text-transparent text-5xl inline-block"
+              style={{ paddingBottom: "2%" }}
+            >
               Projects
-            </span>
+            </div>
           </motion.div>
           <motion.div
             viewport={{ once: true }}
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="card-link"
             style={{
               width: "60%",
+              height: "30%",
               margin: "auto",
-              height: "fit-content",
+              paddingTop: "-5%",
             }}
           >
-            <Link
-              className="card-link"
-              href="https://github.com/rdpatel2/Deal-or-No-Deal"
-              target="_blank"
-              style={{
-                textDecoration: "none",
-                marginLeft: "2%",
-                marginRight: "2%",
-                width: "fit-content%",
-              }}
-            >
-              <ProjectCard
-                title="Deal or No Deal"
-                image={dealOrNoDeal}
-                description="Recreated the deal or no deal game inside of a fully functioning Java GUI. Ran testing scenarios using JUnit tests to ensure quality code."
-              />
-            </Link>
-          </motion.div>
-          <motion.div
-            viewport={{ once: true }}
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="card-link"
-            style={{ width: "60%", margin: "auto" }}
-          >
-            <Link
-              target="_blank"
-              href="https://github.com/rdpatel2/Task-Manager"
-              style={{
-                textDecoration: "none",
-                marginLeft: "2%",
-                marginRight: "2%",
-              }}
-            >
-              <ProjectCard
-                title="Task Manager"
-                image={taskManager}
-                description="Created a task manager in a java IDE with IO capability, along with sorting and organizational features with a fully functioning java GUI"
-              />
-            </Link>
-          </motion.div>
-          <motion.div
-            viewport={{ once: true }}
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="card-link"
-            style={{ width: "60%", margin: "auto" }}
-          >
-            <Link
-              className="card-link"
-              style={{
-                textDecoration: "none",
-                marginLeft: "2%",
-                marginRight: "2%",
-                width: "fit-content",
-              }}
-              target="_blank"
-              href="https://github.com/rdpatel2/Dividend-Calculator"
-            >
-              <ProjectCard
-                title="Dividend Calculator"
-                image={dividendCalculator}
-                description="Designed and implemented a Flask-based web application to fetch, process, and display ETF data, creating a
-user-friendly interface for financial analysis.
-"
-              />
-            </Link>
-          </motion.div>
-          <motion.div
-            viewport={{ once: true }}
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="card-link"
-            style={{ width: "60%", margin: "auto" }}
-          >
-            <Link
-              className="card-link"
-              style={{
-                textDecoration: "none",
-                marginLeft: "2%",
-                marginRight: "2%",
-                width: "fit-content",
-              }}
-              target="_blank"
-              href="https://github.com/rdpatel2/WolfScheduler"
-            >
-              <ProjectCard
-                title="WolfScheduler"
-                image={wolfScheduler}
-                description="Created a scheduling application that allows users to create a login then access faculty or student features. Students and teachers can upload files containing potential classes and pick and choose which classes to enroll in or teach."
-              />
-            </Link>
-            {/* <ProjectCard
-							title="Deal or No Deal"
-							image="https://i.ibb.co/KDjdhxd/Deal-or-No-Deal-Logo-2024.jpg"
-							description="Recreated the deal or no deal game inside of a fully functioning Java GUI"
-						/> */}
+            <Example />
           </motion.div>
         </div>
       </div>
