@@ -56,7 +56,7 @@ const ProjectCard = ({ card }: CardProps) => {
       className="group relative h-[300px] w-[300px] overflow-hidden bg-neutral-200"
       style={{ borderRadius: "50px" }}
     >
-      <a href={card.link}>
+      <a href={card.link} target="_blank">
         {/* Background image container */}
         <div className="absolute inset-0" style={{ borderRadius: "50px" }}>
           <div
@@ -99,7 +99,7 @@ const cards = [
   {
     url: "/assets/web-dev.jpg",
     title: "R1649 Website",
-    link: "https://main.d2m2suroqkuiz4.amplifyapp.com/dashboard-pages/contact-list",
+    link: "https://main.d2m2suroqkuiz4.amplifyapp.com/",
     id: 3,
   },
 ];
